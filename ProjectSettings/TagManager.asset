@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Coins
+  - Health slime
+  - Speed gem
   layers:
   - Default
   - TransparentFX
@@ -40,4 +43,25 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: LAVA
+    uniqueID: 1366482981
+    locked: 0
+  - name: Floor
+    uniqueID: 2199366943
+    locked: 0
+  - name: WALL
+    uniqueID: 1261135831
+    locked: 0
+  - name: Small Wall
+    uniqueID: 4035288057
+    locked: 0
+  - name: Coin
+    uniqueID: 1554357173
+    locked: 0
+  - name: Spike Trap
+    uniqueID: 1734795497
+    locked: 0
+  - name: player
+    uniqueID: 4227458801
     locked: 0
