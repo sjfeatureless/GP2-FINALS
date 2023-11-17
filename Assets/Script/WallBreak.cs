@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class WallBreak : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject[] fragments; // Prefabs of broken pieces
+
+    void OnCollisionEnter(Collision collision)
     {
-        
+        if (collision.relativeVelocity.magnitude > 2)
+        {
+            Break();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    void Break()
     {
-        
+        Destroy(gameObject);
     }
 }
