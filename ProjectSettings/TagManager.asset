@@ -7,6 +7,7 @@ TagManager:
   - Coins
   - Health slime
   - Speed gem
+  - Time
   layers:
   - Default
   - TransparentFX

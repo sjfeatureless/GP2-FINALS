@@ -4,11 +4,12 @@ using UnityEngine;
 using UnityEngine.Experimental.Rendering;
 using UnityEngine.InputSystem;
 using TMPro;
+using System;
 
 public class PlayerMovement : MonoBehaviour
 {
 
-    public TextMeshProUGUI healthCounter, coinsCounter;
+    public TextMeshProUGUI healthCounter, coinsCounter, timer;
     //Variable for our speed modifier
     public float moveSpeed;
     //Variable for our player input
@@ -18,7 +19,8 @@ public class PlayerMovement : MonoBehaviour
 
     //Variable  for Animator
     public Animator anim;
-
+    public float countdown = 30; //Set initial value
+    public float interval = 1; //The interval to decrease the countdown by
     public int coinCounter;
     public int healthPoints;
 
@@ -29,13 +31,18 @@ public class PlayerMovement : MonoBehaviour
     {
         rigidBody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+            InvokeRepeating("Tick", 0, interval);
     }
-
+    void Tick()
+    {
+        countdown -= interval; //Subtract the interval every tick
+    }
     // Update is called once per frame
     void Update()
     {
         healthCounter.text = healthPoints.ToString();
         coinsCounter.text = coinCounter.ToString();
+        timer.text = countdown.ToString();
 
         //While S is pressed run this animation
         //if (Input.GetKeyDown(KeyCode.S))
@@ -108,6 +115,11 @@ public class PlayerMovement : MonoBehaviour
             moveSpeed = 10;
             Destroy(collision.gameObject);
         }
+        if (collision.CompareTag("Time"))
+        {
+            countdown += 30;
+            Destroy(collision.gameObject);
+        }
     }
 
     //Update that handles physics
@@ -120,6 +132,11 @@ public class PlayerMovement : MonoBehaviour
     private void OnMove(InputValue inputValue)
     {
         movementInput = inputValue.Get<Vector2>();
+        {
+            if (movementInput.x == 0)
+                movementInput.x = 1;
+        }
+        movementInput.y = 1;
     }
 
 }
