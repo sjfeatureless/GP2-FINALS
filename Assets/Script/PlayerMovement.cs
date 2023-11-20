@@ -8,7 +8,7 @@ using System;
 
 public class PlayerMovement : MonoBehaviour
 {
-
+    public GameObject TitleScreen;
     public TextMeshProUGUI healthCounter, coinsCounter, timer;
     //Variable for our speed modifier
     public float moveSpeed;
@@ -32,6 +32,12 @@ public class PlayerMovement : MonoBehaviour
         rigidBody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
             InvokeRepeating("Tick", 0, interval);
+        TitleScreen.SetActive(true);
+    }
+
+    public void StartGameButton()
+    {
+        TitleScreen.SetActive(false);
     }
     void Tick()
     {
