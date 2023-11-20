@@ -5,17 +5,29 @@ using UnityEngine.SceneManagement;
 
 public class PlayerBullet : MonoBehaviour
 {
-    public float speed = 60f;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Transform firePoint; // Transform representing the point where bullets are spawned
+    public GameObject bulletPrefab; // Prefab of the bullet
+    public float bulletSpeed = 10f; // Speed of the bullet
 
-    // Update is called once per frame
     void Update()
     {
-        
+        // Check for left mouse button click
+        if (Input.GetMouseButtonDown(0))
+        {
+            // Perform the shoot
+            Shoot();
+        }
+    }
+
+    void Shoot()
+    {
+        // Instantiate a bullet at the firePoint position and rotation
+        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+
+        // Get the Rigidbody2D component of the bullet
+        Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
+
+        // Apply forward force to the bullet in 2D
+        bulletRb.AddForce(firePoint.up * bulletSpeed, ForceMode2D.Impulse);
     }
 }
