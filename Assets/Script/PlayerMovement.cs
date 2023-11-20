@@ -41,14 +41,8 @@ public class PlayerMovement : MonoBehaviour
     {
         SceneManager.LoadScene("SampleScene");
     }
-
-    public void StartGameButton()
-    {
-        TitleScreen.SetActive(false);
-    }
     public void GameOver()
     {
-        if (countdown < 0)
             GameOverScreen.SetActive(true);
     }
     void Tick()
@@ -61,7 +55,14 @@ public class PlayerMovement : MonoBehaviour
         healthCounter.text = healthPoints.ToString();
         coinsCounter.text = coinCounter.ToString();
         timer.text = countdown.ToString();
-        GameOver();
+        if (healthPoints <= 0)
+        {
+            GameOver();
+        }
+        if (countdown <= 0)
+        {
+            GameOver();
+        }
         //While S is pressed run this animation
         //if (Input.GetKeyDown(KeyCode.S))
         //{
