@@ -8,6 +8,7 @@ TagManager:
   - Health slime
   - Speed gem
   - Time
+  - Trap
   layers:
   - Default
   - TransparentFX

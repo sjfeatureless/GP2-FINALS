@@ -5,10 +5,12 @@ using UnityEngine.Experimental.Rendering;
 using UnityEngine.InputSystem;
 using TMPro;
 using System;
+using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public GameObject TitleScreen;
+    public GameObject TitleScreen, RestartButton, GameOverScreen;
     public TextMeshProUGUI healthCounter, coinsCounter, timer;
     //Variable for our speed modifier
     public float moveSpeed;
@@ -35,9 +37,19 @@ public class PlayerMovement : MonoBehaviour
         TitleScreen.SetActive(true);
     }
 
+    public void Restart()
+    {
+        SceneManager.LoadScene("SampleScene");
+    }
+
     public void StartGameButton()
     {
         TitleScreen.SetActive(false);
+    }
+    public void GameOver()
+    {
+        if (countdown < 0)
+            GameOverScreen.SetActive(true);
     }
     void Tick()
     {
@@ -49,7 +61,7 @@ public class PlayerMovement : MonoBehaviour
         healthCounter.text = healthPoints.ToString();
         coinsCounter.text = coinCounter.ToString();
         timer.text = countdown.ToString();
-
+        GameOver();
         //While S is pressed run this animation
         //if (Input.GetKeyDown(KeyCode.S))
         //{
@@ -125,6 +137,10 @@ public class PlayerMovement : MonoBehaviour
         {
             countdown += 30;
             Destroy(collision.gameObject);
+        }
+        if (collision.CompareTag("Trap"))
+        {
+            anim.SetTrigger("damaged");
         }
     }
 
