@@ -9,6 +9,10 @@ TagManager:
   - Speed gem
   - Time
   - Trap
+  - 2lvl2
+  - 2lvl3
+  - 2lvl4
+  - 2win
   layers:
   - Default
   - TransparentFX

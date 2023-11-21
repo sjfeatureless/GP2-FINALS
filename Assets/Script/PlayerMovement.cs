@@ -162,4 +162,21 @@ public class PlayerMovement : MonoBehaviour
         movementInput.y = 1;
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "2lvl2")
+        {
+            SceneManager.LoadScene("lvl2");
+        }else if (collision.gameObject.tag == "2lvl3")
+        {
+            SceneManager.LoadScene("lvl3");
+        }else if (collision.gameObject.tag == "2lvl4")
+        {
+            SceneManager.LoadScene("lvl4");
+        }else if (collision.gameObject.tag == "2win")
+        {
+            SceneManager.LoadScene("WinScreen");
+        }
+    }
+
 }

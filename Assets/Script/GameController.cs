@@ -68,7 +68,7 @@ public class GameController : MonoBehaviour
 
     public void RestartButton()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("lvl1");
     }
 
     public void ExitButton()
