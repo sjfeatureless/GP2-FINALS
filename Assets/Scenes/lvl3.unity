@@ -20632,9 +20632,9 @@ MonoBehaviour:
   TitleScreen: {fileID: 0}
   RestartButton: {fileID: 0}
   GameOverScreen: {fileID: 0}
-  healthCounter: {fileID: 0}
-  coinsCounter: {fileID: 0}
-  timer: {fileID: 0}
+  healthCounter: {fileID: 1964536080}
+  coinsCounter: {fileID: 365670450}
+  timer: {fileID: 468857509}
   moveSpeed: 5
   movementInput: {x: 0, y: 0}
   rigidBody: {fileID: 316647273}
@@ -34846,7 +34846,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1665129677
 PrefabInstance:
