@@ -12865,9 +12865,9 @@ MonoBehaviour:
   TitleScreen: {fileID: 0}
   RestartButton: {fileID: 0}
   GameOverScreen: {fileID: 0}
-  healthCounter: {fileID: 0}
-  coinsCounter: {fileID: 0}
-  timer: {fileID: 0}
+  healthCounter: {fileID: 1964536080}
+  coinsCounter: {fileID: 365670450}
+  timer: {fileID: 468857509}
   moveSpeed: 5
   movementInput: {x: 0, y: 0}
   rigidBody: {fileID: 316647273}
