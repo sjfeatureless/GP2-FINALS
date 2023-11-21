@@ -22500,9 +22500,9 @@ MonoBehaviour:
   TitleScreen: {fileID: 0}
   RestartButton: {fileID: 0}
   GameOverScreen: {fileID: 0}
-  healthCounter: {fileID: 1964536080}
-  coinsCounter: {fileID: 365670450}
-  timer: {fileID: 468857509}
+  healthCounter: {fileID: 0}
+  coinsCounter: {fileID: 0}
+  timer: {fileID: 0}
   moveSpeed: 5
   movementInput: {x: 0, y: 0}
   rigidBody: {fileID: 316647273}
@@ -92889,11 +92889,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-<<<<<<< Updated upstream
-  m_RootOrder: 13
-=======
   m_RootOrder: 8
->>>>>>> Stashed changes
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1597504908 stripped
 Transform:
