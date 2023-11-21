@@ -16,9 +16,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - floor
+  - walls
+  - traps
   - 
   - 
   - 
@@ -66,4 +66,7 @@ TagManager:
     locked: 0
   - name: player
     uniqueID: 4227458801
+    locked: 0
+  - name: terrain
+    uniqueID: 58987315
     locked: 0
